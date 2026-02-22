@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Layout eCommerce con Grid - Desafío" />
+  <title>eCommerce • Layout con Grid</title>
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="app-grid">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">◆</div>
+        <div class="brand-text">
+          <span class="brand-name">Nocturne</span>
+          <span class="brand-sub">eCommerce</span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Menú principal">
+        <a class="nav-link" href="#">Inicio</a>
+        <a class="nav-link" href="#productos">Productos</a>
+        <a class="nav-link" href="#categorias">Categorías</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" type="button" aria-label="Buscar">
+          <span aria-hidden="true">⌕</span>
+        </button>
+        <button class="icon-btn" type="button" aria-label="Carrito">
+          <span aria-hidden="true">🛒</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="categorias">
+      <div class="side-card">
+        <h2 class="side-title">Categorías</h2>
+
+        <!-- Flex vertical + conteo por categoría -->
+        <ul class="category-list" role="list">
+          <li><a class="category-link" href="#" data-filter="tecnologia">Tecnología <span class="count">2</span></a></li>
+          <li><a class="category-link" href="#" data-filter="moda">Moda <span class="count">2</span></a></li>
+          <li><a class="category-link" href="#" data-filter="hogar">Hogar <span class="count">2</span></a></li>
+          <li><a class="category-link" href="#" data-filter="audio">Audio <span class="count">2</span></a></li>
+          <li><a class="category-link" href="#" data-filter="accesorios">Accesorios <span class="count">2</span></a></li>
+          <li><a class="category-link" href="#" data-filter="fotografia">Fotografía <span class="count">2</span></a></li>
+        </ul>
+
+        <div class="side-divider"></div>
+
+        <!-- Extra elegante: ordenar + precio -->
+        <div class="filters">
+          <h3 class="filters-title">Refinar</h3>
+
+          <label class="field">
+            <span class="field-label">Ordenar por</span>
+            <select class="select" name="sort" aria-label="Ordenar por">
+              <option value="recomendados">Recomendados</option>
+              <option value="precio-asc">Precio: menor a mayor</option>
+              <option value="precio-desc">Precio: mayor a menor</option>
+              <option value="nuevos">Más nuevos</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="field-label">Precio máximo (USD)</span>
+            <input class="range" type="range" min="50" max="600" value="420" />
+            <div class="range-meta">
+              <span>50</span>
+              <span>600</span>
+            </div>
+          </label>
+
+          <button class="btn-ghost" type="button">Aplicar</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main" id="productos">
+      <!-- Hero premium -->
+      <section class="hero" aria-label="Promoción">
+        <div class="hero-content">
+          <p class="badge">Colección • Nocturne</p>
+          <h1>Diseño oscuro, elegante y moderno.</h1>
+          <p class="hero-sub">
+            Productos seleccionados con estética premium. Layout 100% alineado a la pauta (Grid + Flex).
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#productos">Ver productos</a>
+            <a class="btn-secondary" href="#categorias">Explorar categorías</a>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section class="section-head">
+        <h2 class="section-title">Productos</h2>
+        <p class="section-sub">12 productos • imágenes de Unsplash</p>
+      </section>
+
+      <!-- Grilla de productos con Grid -->
+      <section class="products-grid" aria-label="Listado de productos">
+        <!-- Tecnología (2) -->
+        <article class="product-card" data-category="tecnologia">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80"
+              alt="Laptop premium"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Laptop Nocturne X</h3>
+            <p class="product-desc">Rendimiento fluido y estética sobria.</p>
+            <div class="product-row">
+              <span class="price">$499</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="tecnologia">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80"
+              alt="Smartphone elegante"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Smartphone Eclipse</h3>
+            <p class="product-desc">Minimalismo premium en tu mano.</p>
+            <div class="product-row">
+              <span class="price">$399</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Moda (2) -->
+        <article class="product-card" data-category="moda">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1200&q=80"
+              alt="Chaqueta elegante"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Chaqueta Nightfall</h3>
+            <p class="product-desc">Corte limpio, estilo urbano.</p>
+            <div class="product-row">
+              <span class="price">$129</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="moda">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80"
+              alt="Zapatillas minimalistas"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Zapatillas Mono</h3>
+            <p class="product-desc">Comodidad y look sobrio.</p>
+            <div class="product-row">
+              <span class="price">$89</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hogar (2) -->
+        <article class="product-card" data-category="hogar">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80"
+              alt="Lámpara minimalista"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Lámpara Obsidian</h3>
+            <p class="product-desc">Luz cálida con presencia.</p>
+            <div class="product-row">
+              <span class="price">$59</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="hogar">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1200&q=80"
+              alt="Silla de diseño"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Silla Noir</h3>
+            <p class="product-desc">Diseño y confort en equilibrio.</p>
+            <div class="product-row">
+              <span class="price">$149</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Audio (2) -->
+        <article class="product-card" data-category="audio">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1200&q=80"
+              alt="Audífonos premium"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Auriculares Void</h3>
+            <p class="product-desc">Sonido claro, aislamiento suave.</p>
+            <div class="product-row">
+              <span class="price">$109</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="audio">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?auto=format&fit=crop&w=1200&q=80"
+              alt="Parlante elegante"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Parlante Pulse</h3>
+            <p class="product-desc">Graves firmes, diseño limpio.</p>
+            <div class="product-row">
+              <span class="price">$139</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Accesorios (2) -->
+        <article class="product-card" data-category="accesorios">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=1200&q=80"
+              alt="Reloj elegante"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Reloj Meridian</h3>
+            <p class="product-desc">Precisión y estilo oscuro.</p>
+            <div class="product-row">
+              <span class="price">$189</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="accesorios">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=80"
+              alt="Mochila minimalista"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Mochila Slate</h3>
+            <p class="product-desc">Espacio inteligente, look pro.</p>
+            <div class="product-row">
+              <span class="price">$79</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fotografía (2) -->
+        <article class="product-card" data-category="fotografia">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1516724562728-afc824a36e84?auto=format&fit=crop&w=1200&q=80"
+              alt="Cámara fotográfica"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Cámara Carbon</h3>
+            <p class="product-desc">Captura nítida, diseño clásico.</p>
+            <div class="product-row">
+              <span class="price">$299</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="fotografia">
+          <div class="product-media">
+            <img
+              src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80"
+              alt="Lente de cámara"
+              loading="lazy"
+            />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Lente Prime</h3>
+            <p class="product-desc">Bokeh suave y enfoque rápido.</p>
+            <div class="product-row">
+              <span class="price">$219</span>
+              <button class="btn-small" type="button">Comprar</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contacto">
+      <p>© 2026 • Nocturne eCommerce • Layout con Grid</p>
+    </footer>
+
+  </div>
+</body>
+</html>
