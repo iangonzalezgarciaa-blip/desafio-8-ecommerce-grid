@@ -1,4 +1,5 @@
 # Desafío 8 — Layout Ecommerce con CSS Grid
+https://iangonzalezgarciaa-blip.github.io/desafio-8-ecommerce-grid/
 
 Resumen rápido
 - Proyecto ubicado en: `index.html` y `css/style.css`.
